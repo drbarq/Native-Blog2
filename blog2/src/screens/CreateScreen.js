@@ -10,12 +10,26 @@ const CreateScreen = ( props ) => {
     return (
         <View>
             <Text style={styles.label}>Enter Title:</Text>
-            <TextInput style={styles.input} value={title} onChangeText={(title) => setTitle(title)}/>
+            <TextInput 
+                style={styles.input} 
+                value={title} 
+                onChangeText={(title) => setTitle(title)}
+            />
             <Text style={styles.label}>Enter Content:</Text>
-            <TextInput style={styles.input} value={content} onChangeText={(content) => setContent(content)}/>
+            <TextInput 
+                style={styles.input} 
+                value={content} 
+                onChangeText={(content) => setContent(content)}
+            />
             <Button 
                 title="Add Blog Post" 
-                onPress={() => addBlogPost(title, content)}
+                onPress={
+                    () => {
+                        addBlogPost(title, content, () => {
+                            props.navigation.navigate('Index')
+                        })
+                    }
+                }
             />
         </View>
     )
