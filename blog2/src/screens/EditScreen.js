@@ -12,7 +12,14 @@ const EditScreen = ( props ) => {
         blogPost => blogPost.id === id 
     )
 
-    return <BlogPostForm />
+    console.log(blogPost)
+
+    return (
+        <BlogPostForm
+            initialValue={{ title: blogPost.title, content: blogPost.content}} 
+            onSubmit={(title, content) => console.log(title, content)}
+        />
+    )
 }
 
 const styles = StyleSheet.create({})
