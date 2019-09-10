@@ -28,6 +28,13 @@ const BlogPostForm = ( props ) => {
     )
 }
 
+BlogPostForm.defaultProps = {
+    initialValue: {
+        title: '',
+        content:''
+    }
+}
+
 const styles = StyleSheet.create({
     input: {
         fontSize: 18, 
